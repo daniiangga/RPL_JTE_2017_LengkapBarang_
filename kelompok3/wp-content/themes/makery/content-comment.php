@@ -23,7 +23,7 @@
 				<time class="comment-date" datetime="<?php comment_time('Y-m-d'); ?>"><?php comment_time(get_option('date_format').' '.get_option('time_format')); ?></time>
 				<?php 
 				comment_reply_link(array(
-					'reply_text' => '<span class="fa fa-repeat"></span>'.__('Reply', 'makery'),
+					'reply_text' => '<span class="fa fa-repeat"></span>'.__('Balas', 'makery'),
 					'depth' => $GLOBALS['depth'], 
 					'max_depth' => 2,
 				)); 
