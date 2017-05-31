@@ -3,7 +3,7 @@
 		<h4><?php _e('Reviewed Items', 'makery'); ?></h4>
 	</div>
 	<ul>
-		<?php foreach(ThemexShop::$data['reviews'] as $ID) { ?>
+		<?php foreach(ThemexShop::$data['review'] as $ID) { ?>
 		<li><?php echo get_the_title($ID); ?></li>
 		<?php } ?>
 	</ul>
