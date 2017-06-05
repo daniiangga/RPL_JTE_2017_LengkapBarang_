@@ -1,7 +1,7 @@
 <?php if(have_comments() || comments_open()) { ?>
 <div class="post-comments clearfix">
 	<div class="element-title">
-		<h1><?php _e('Comments', 'makery'); ?></h1>
+		<h1><?php _e('Komentar', 'makery'); ?></h1>
 	</div>
 	<?php if(have_comments()) { ?>
 	<div class="comments-wrap">

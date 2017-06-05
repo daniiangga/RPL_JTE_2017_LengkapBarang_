@@ -23,12 +23,12 @@
 				<!-- /logo -->
 				<div class="header-options right clearfix">
 					<?php if(is_user_logged_in()) { ?>
-					<a href="<?php echo wp_logout_url(SITE_URL); ?>" class="element-button opaque"><?php _e('Sign Out','makery'); ?></a>
-					<a href="<?php echo ThemexUser::$data['current']['links']['profile']['url']; ?>" class="element-button primary"><?php _e('My Account','makery'); ?></a>
+					<a href="<?php echo wp_logout_url(SITE_URL); ?>" class="element-button opaque"><?php _e('Keluar','makery'); ?></a>
+					<a href="<?php echo ThemexUser::$data['current']['links']['profile']['url']; ?>" class="element-button primary"><?php _e('Akun Saya','makery'); ?></a>
 					<?php } else { ?>
-					<a href="#login_form" class="element-button element-colorbox opaque"><?php _e('Sign In','makery'); ?></a>
+					<a href="#login_form" class="element-button element-colorbox opaque"><?php _e('Masuk','makery'); ?></a>
 					<?php if(get_option('users_can_register')) { ?>
-					<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button primary"><?php _e('Register','makery'); ?></a>
+					<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button primary"><?php _e('Daftar','makery'); ?></a>
 					<?php } ?>					
 					<div class="site-popups hidden">
 						<div id="login_form">
@@ -80,10 +80,7 @@
 				<nav class="header-menu element-menu left">
 					<?php wp_nav_menu(array('theme_location' => 'main_menu','container_class' => 'menu')); ?>
 				</nav>
-				<div class="select-menu element-select redirect medium">
-					<span></span>
-					<?php ThemexInterface::renderDropdownMenu('main_menu'); ?>
-				</div>
+				
 				<!-- /menu -->
 				<?php if(ThemexWoo::isActive()) { ?>
 				<div class="header-cart right">

@@ -7,7 +7,7 @@ Template Name: Profile Settings
 <?php get_sidebar('profile-left'); ?>
 <div class="column fivecol">
 	<div class="element-title indented">
-		<h1><?php _e('My Settings', 'makery'); ?></h1>
+		<h1><?php _e('Konfigurasi', 'makery'); ?></h1>
 	</div>
 	<?php ThemexInterface::renderTemplateContent('profile-settings'); ?>
 	<form action="" method="POST" class="site-form">
@@ -17,7 +17,7 @@ Template Name: Profile Settings
 		<table class="profile-fields">
 			<tbody>
 				<tr>
-					<th><?php _e('Notifications', 'makery'); ?></th>
+					<th><?php _e('Notifikasi', 'makery'); ?></th>
 					<td>
 						<div class="element-select">
 							<span></span>
@@ -37,7 +37,7 @@ Template Name: Profile Settings
 					</td>
 				</tr>
 				<tr>
-					<th><?php _e('Email Address', 'makery'); ?></th>
+					<th><?php _e('Alamat Email', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="text" name="email" value="<?php echo esc_attr(ThemexUser::$data['current']['email']); ?>" />
@@ -45,7 +45,7 @@ Template Name: Profile Settings
 					</td>
 				</tr>
 				<tr>
-					<th><?php _e('New Password', 'makery'); ?></th>
+					<th><?php _e('Kata Sandi Baru', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="password" name="new_password" value="" />
@@ -53,7 +53,7 @@ Template Name: Profile Settings
 					</td>
 				</tr>
 				<tr>
-					<th><?php _e('Confirm Password', 'makery'); ?></th>
+					<th><?php _e('Konfirmasi Kata Sandi', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="password" name="confirm_password" value="" />
@@ -62,7 +62,7 @@ Template Name: Profile Settings
 				</tr>
 				<?php if(ThemexFacebook::isUpdated(ThemexUser::$data['current']['ID'])) { ?>
 				<tr>
-					<th><?php _e('Current Password', 'makery'); ?></th>
+					<th><?php _e('Ulangi Kata Sandi', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="password" name="current_password" value="" />
@@ -72,7 +72,7 @@ Template Name: Profile Settings
 				<?php } ?>
 			</tbody>
 		</table>
-		<a href="#" class="element-button element-submit primary"><?php _e('Save Changes', 'makery'); ?></a>
+		<a href="#" class="element-button element-submit primary"><?php _e('Simpan', 'makery'); ?></a>
 		<input type="hidden" name="user_action" value="update_settings" />
 	</form>
 </div>
