@@ -8,20 +8,20 @@ Template Name: Shop Product
 <div class="column fivecol">
 	<div class="element-title indented">
 		<?php if(empty(ThemexWoo::$data['product']) || ThemexWoo::$data['product']['status']!='draft') { ?>
-		<h1><?php _e('Edit Item', 'makery'); ?></h1>
+		<h1><?php _e('Ubah Barang', 'makery'); ?></h1>
 		<?php } else { ?>
-		<h1><?php _e('Add Item', 'makery'); ?></h1>
+		<h1><?php _e('Tambah Barang', 'makery'); ?></h1>
 		<?php } ?>
 	</div>
 	<?php ThemexInterface::renderTemplateContent('shop-product'); ?>
 	<?php if(ThemexCore::checkOption('shop_multiple')) { ?>
-	<span class="secondary"><?php _e('This shop does not exist.', 'makery'); ?></span>
+	<span class="secondary"><?php _e('Toko ini tidak ada.', 'makery'); ?></span>
 	<?php } else if(themex_status(ThemexUser::$data['current']['shop'])!='publish') { ?>
-	<span class="secondary"><?php _e('This shop is currently being reviewed.', 'makery'); ?></span>
+	<span class="secondary"><?php _e('Toko ini sedang di review', 'makery'); ?></span>
 	<?php } else if(empty(ThemexWoo::$data['product']) || (!empty(ThemexWoo::$data['product']['ID']) && ThemexWoo::$data['product']['author']!=ThemexUser::$data['current']['ID'])) { ?>
-	<span class="secondary"><?php _e('This item does not exist.', 'makery'); ?></span>
+	<span class="secondary"><?php _e('Toko ini tidak ada', 'makery'); ?></span>
 	<?php } else if(ThemexWoo::$data['product']['status']=='pending') { ?>
-	<span class="secondary"><?php _e('This item is currently being reviewed.', 'makery'); ?></span>
+	<span class="secondary"><?php _e('Toko ini sedang di review', 'makery'); ?></span>
 	<?php } else { ?>
 	<form action="" enctype="multipart/form-data" method="POST">
 		<input type="file" id="product_image" name="product_image" class="element-upload shifted" />
@@ -46,7 +46,7 @@ Template Name: Shop Product
 		<table class="profile-fields">
 			<tbody>
 				<tr>
-					<th><?php _e('Name', 'makery'); ?></th>
+					<th><?php _e('Nama', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="text" name="title" value="<?php echo esc_attr(ThemexWoo::$data['product']['title']); ?>" />
@@ -54,14 +54,14 @@ Template Name: Shop Product
 					</td>
 				</tr>
 				<tr>
-					<th><?php _e('Images', 'makery'); ?></th>
+					<th><?php _e('Gambar', 'makery'); ?></th>
 					<td>
 						<div class="element-gallery">
 							<label for="product_image" class="element-button secondary small square" title="<?php _e('Add Image', 'makery'); ?>">
 								<span class="fa fa-plus"></span>
 							</label>
 							<?php foreach(ThemexWoo::$data['product']['images'] as $image) { ?>
-							<a href="#image_<?php echo $image; ?>" title="<?php _e('Remove Image', 'makery'); ?>" class="gallery-image element-submit">
+							<a href="#image_<?php echo $image; ?>" title="<?php _e('Hapus Gambar', 'makery'); ?>" class="gallery-image element-submit">
 								<div class="image-border none">
 									<img src="<?php echo themex_resize(wp_get_attachment_url($image), 150, 150); ?>" class="fullwidth" alt="" />
 								</div>
@@ -72,7 +72,7 @@ Template Name: Shop Product
 				</tr>
 				<?php if(ThemexCore::getOption('product_type', 'all')=='all') { ?>
 				<tr>
-					<th><?php _e('Type', 'makery'); ?></th>
+					<th><?php _e('Tipe', 'makery'); ?></th>
 					<td>
 						<div class="element-select">
 							<span></span>
@@ -97,7 +97,7 @@ Template Name: Shop Product
 				<?php } ?>
 				<?php if(themex_taxonomy('product_cat')) { ?>
 				<tr>
-					<th <?php if(ThemexCore::checkOption('product_category')) { ?>class="large"<?php } ?>><?php _e('Category', 'makery'); ?></th>
+					<th <?php if(ThemexCore::checkOption('product_category')) { ?>class="large"<?php } ?>><?php _e('Kategori', 'makery'); ?></th>
 					<td>
 						<?php if(ThemexCore::checkOption('product_category')) { ?>
 						<?php 
@@ -131,7 +131,7 @@ Template Name: Shop Product
 				<?php } ?>
 				<?php if(!ThemexCore::checkOption('product_tags')) { ?>
 				<tr>
-					<th><?php _e('Tags', 'makery'); ?></th>
+					<th><?php _e('Tipe', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="text" name="tags" value="<?php echo esc_attr(ThemexWoo::$data['product']['tags']); ?>" />
@@ -141,7 +141,7 @@ Template Name: Shop Product
 				<?php } ?>
 				<?php if(!ThemexCore::checkOption('product_price') && ThemexWoo::$data['product']['form']!='variable') { ?>
 				<tr>
-					<th><?php _e('Regular Price', 'makery'); ?></th>
+					<th><?php _e('Harga Normal', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="text" name="regular_price" value="<?php echo ThemexWoo::formatPrice(ThemexWoo::$data['product']['regular_price']); ?>" />
@@ -149,7 +149,7 @@ Template Name: Shop Product
 					</td>
 				</tr>
 				<tr>
-					<th><?php _e('Sale Price', 'makery'); ?></th>
+					<th><?php _e('Harga Diskon', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="text" name="sale_price" value="<?php echo ThemexWoo::formatPrice(ThemexWoo::$data['product']['sale_price']); ?>" />
@@ -160,7 +160,7 @@ Template Name: Shop Product
 				<?php if(in_array(ThemexCore::getOption('product_type', 'all'), array('all', 'physical'))) { ?>
 				<?php if(themex_taxonomy('product_shipping_class') && ThemexWoo::isShipping()) { ?>
 				<tr class="trigger-type-physical">
-					<th><?php _e('Shipping Class', 'makery'); ?></th>
+					<th><?php _e('Tipe Pengiriman', 'makery'); ?></th>
 					<td>
 						<div class="element-select">
 							<span></span>
@@ -176,15 +176,17 @@ Template Name: Shop Product
 						</div>
 					</td>
 				</tr>
+				// ini merupakan bagian kode stok barang
 				<?php } ?>
 				<?php if(ThemexWoo::$data['product']['form']!='variable') { ?>
 				<tr class="trigger-type-physical">
-					<th><?php _e('Stock', 'makery'); ?></th>
+					<th><?php _e('Stok Barang', 'makery'); ?></th>
 					<td>
 						<div class="field-wrap">
 							<input type="text" name="stock" class="exclude" value="<?php echo esc_attr(ThemexWoo::$data['product']['stock']); ?>" />
 						</div>
 					</td>
+				// ini merupakan bagian kode stok barang
 				</tr>
 				<?php } ?>
 				<?php } ?>
@@ -240,7 +242,7 @@ Template Name: Shop Product
 					$options=ThemexWoo::getOptions(ThemexWoo::$data['product']['ID']);
 					?>
 					<tr class="trigger-type-physical">
-						<th><?php _e('Attributes', 'makery'); ?></th>
+						<th><?php _e('Attribut', 'makery'); ?></th>
 						<td>
 							<div class="element-options" id="attribute">
 								<?php 
@@ -249,13 +251,13 @@ Template Name: Shop Product
 								$index++;
 								?>
 								<div class="option">
-									<a href="#<?php echo $index; ?>" title="<?php _e('Edit Attribute', 'makery'); ?>"><?php echo $option['name']; ?></a>
-									<a href="#<?php echo $index; ?>" class="element-remove" title="<?php _e('Remove Attribute', 'makery'); ?>">
+									<a href="#<?php echo $index; ?>" title="<?php _e('Ubah Attribut', 'makery'); ?>"><?php echo $option['name']; ?></a>
+									<a href="#<?php echo $index; ?>" class="element-remove" title="<?php _e('Hapus Attribut', 'makery'); ?>">
 										<span class="fa fa-times"></span>
 									</a>
 								</div>
 								<?php } ?>
-								<a href="#add" class="element-button element-clone secondary small square" title="<?php _e('Add Attribute', 'makery'); ?>">
+								<a href="#add" class="element-button element-clone secondary small square" title="<?php _e('Tambah Attribut', 'makery'); ?>">
 									<span class="fa fa-plus"></span>
 								</a>
 							</div>
@@ -266,12 +268,12 @@ Template Name: Shop Product
 							<div class="option-wrap clearfix">
 								<div class="fivecol column">
 									<div class="field-wrap">
-										<input type="text" name="option_names[]" value="" placeholder="<?php _e('Name', 'makery'); ?>" />
+										<input type="text" name="option_names[]" value="" placeholder="<?php _e('Nama', 'makery'); ?>" />
 									</div>
 								</div>
 								<div class="sevencol column last">
 									<div class="field-wrap">
-										<input type="text" name="option_values[]" value="" placeholder="<?php _e('Options (comma separated)', 'makery'); ?>" />
+										<input type="text" name="option_values[]" value="" placeholder="<?php _e('Opsi (comma separated)', 'makery'); ?>" />
 									</div>
 								</div>
 							</div>
@@ -287,12 +289,12 @@ Template Name: Shop Product
 							<div class="option-wrap clearfix">
 								<div class="fivecol column">
 									<div class="field-wrap">
-										<input type="text" name="option_names[]" value="<?php echo $option['name']; ?>" placeholder="<?php _e('Name', 'makery'); ?>" />
+										<input type="text" name="option_names[]" value="<?php echo $option['name']; ?>" placeholder="<?php _e('Nama', 'makery'); ?>" />
 									</div>
 								</div>
 								<div class="sevencol column last">
 									<div class="field-wrap">
-										<input type="text" name="option_values[]" value="<?php echo $option['value']; ?>" placeholder="<?php _e('Options (comma separated)', 'makery'); ?>" />
+										<input type="text" name="option_values[]" value="<?php echo $option['value']; ?>" placeholder="<?php _e('Opsi (comma separated)', 'makery'); ?>" />
 									</div>
 								</div>
 							</div>
@@ -303,18 +305,18 @@ Template Name: Shop Product
 					$variations=ThemexWoo::getVariations(ThemexWoo::$data['product']['ID']);
 					?>
 					<tr class="trigger-type-physical">
-						<th><?php _e('Variations', 'makery'); ?></th>
+						<th><?php _e('Variasi', 'makery'); ?></th>
 						<td>
 							<div class="element-options" id="variation">
 								<?php foreach($variations as $index => $variation) { ?>
 								<div class="option">
-									<a href="#<?php echo $variation->ID; ?>" title="<?php _e('Edit Variation', 'makery'); ?>"><?php echo sprintf(__('Variation #%s', 'makery'), $index+1); ?></a>
-									<a href="#<?php echo $variation->ID; ?>" class="element-remove" title="<?php _e('Remove Variation', 'makery'); ?>">
+									<a href="#<?php echo $variation->ID; ?>" title="<?php _e('Ubah Variasi', 'makery'); ?>"><?php echo sprintf(__('Variation #%s', 'makery'), $index+1); ?></a>
+									<a href="#<?php echo $variation->ID; ?>" class="element-remove" title="<?php _e('Hapus Variasi', 'makery'); ?>">
 										<span class="fa fa-times"></span>
 									</a>
 								</div>
 								<?php } ?>
-								<a href="#add" class="element-button element-clone secondary small square" title="<?php _e('Add Variation', 'makery'); ?>">
+								<a href="#add" class="element-button element-clone secondary small square" title="<?php _e('Tambahkan Variasi', 'makery'); ?>">
 									<span class="fa fa-plus"></span>
 								</a>
 							</div>
@@ -338,19 +340,21 @@ Template Name: Shop Product
 									</select>
 								</div>
 								<?php } ?>
+								// ini merupakan bagian kode stok barang
 								<div class="fourcol column">
 									<div class="field-wrap">
-										<input type="text" name="variation_stocks[]" class="exclude" value="" placeholder="<?php _e('Stock', 'makery'); ?>" />
+										<input type="text" name="variation_stocks[]" class="exclude" value="" placeholder="<?php _e('Stok Barang', 'makery'); ?>" />
 									</div>
 								</div>
+								// ini merupakan bagian kode stok barang
 								<div class="fourcol column">
 									<div class="field-wrap">
-										<input type="text" name="variation_regular_prices[]" value="" placeholder="<?php _e('Regular Price', 'makery'); ?>" />
+										<input type="text" name="variation_regular_prices[]" value="" placeholder="<?php _e('Harga Normal', 'makery'); ?>" />
 									</div>
 								</div>
 								<div class="fourcol column last">
 									<div class="field-wrap">
-										<input type="text" name="variation_sale_prices[]" value="" placeholder="<?php _e('Sale Price', 'makery'); ?>" />
+										<input type="text" name="variation_sale_prices[]" value="" placeholder="<?php _e('Harga Diskon', 'makery'); ?>" />
 									</div>
 								</div>
 								<input type="hidden" name="variation_ids[]" value="" />
@@ -377,19 +381,21 @@ Template Name: Shop Product
 									</select>
 								</div>
 								<?php } ?>
+								// ini merupakan bagian kode stok barang
 								<div class="fourcol column">
 									<div class="field-wrap">
-										<input type="text" name="variation_stocks[]" class="exclude" value="<?php echo intval($variation->_stock); ?>" placeholder="<?php _e('Stock', 'makery'); ?>" />
+										<input type="text" name="variation_stocks[]" class="exclude" value="<?php echo intval($variation->_stock); ?>" placeholder="<?php _e('Stok Barang', 'makery'); ?>" />
 									</div>
 								</div>
+								// ini merupakan bagian kode stok barang
 								<div class="fourcol column">
 									<div class="field-wrap">
-										<input type="text" name="variation_regular_prices[]" value="<?php echo ThemexWoo::formatPrice($variation->_regular_price); ?>" placeholder="<?php _e('Regular Price', 'makery'); ?>" />
+										<input type="text" name="variation_regular_prices[]" value="<?php echo ThemexWoo::formatPrice($variation->_regular_price); ?>" placeholder="<?php _e('Harga Umum', 'makery'); ?>" />
 									</div>
 								</div>
 								<div class="fourcol column last">
 									<div class="field-wrap">
-										<input type="text" name="variation_sale_prices[]" value="<?php echo ThemexWoo::formatPrice($variation->_sale_price); ?>" placeholder="<?php _e('Sale Price', 'makery'); ?>" />
+										<input type="text" name="variation_sale_prices[]" value="<?php echo ThemexWoo::formatPrice($variation->_sale_price); ?>" placeholder="<?php _e('Harga Normal', 'makery'); ?>" />
 									</div>
 								</div>
 								<input type="hidden" name="variation_ids[]" value="<?php echo $variation->ID; ?>" />
@@ -407,16 +413,16 @@ Template Name: Shop Product
 		</div>
 		<?php if(ThemexWoo::$data['product']['status']=='draft') { ?>
 			<?php if(ThemexCore::checkOption('product_approve')) { ?>
-			<a href="#" class="element-button element-submit primary"><?php _e('Save Changes', 'makery'); ?></a>
+			<a href="#" class="element-button element-submit primary"><?php _e('Simpan', 'makery'); ?></a>
 			<?php } else { ?>
-			<a href="#" class="element-button element-submit primary"><?php _e('Submit for Review', 'makery'); ?></a>
+			<a href="#" class="element-button element-submit primary"><?php _e('Submit untuk di Review', 'makery'); ?></a>
 			<?php } ?>
 		<?php } else { ?>
-		<a href="#" class="element-button element-submit primary"><?php _e('Save Changes', 'makery'); ?></a>		
-		<a href="<?php echo get_permalink(ThemexWoo::$data['product']['ID']); ?>" target="_blank" title="<?php _e('View', 'makery'); ?>" class="element-button secondary square">
+		<a href="#" class="element-button element-submit primary"><?php _e('Simpan', 'makery'); ?></a>		
+		<a href="<?php echo get_permalink(ThemexWoo::$data['product']['ID']); ?>" target="_blank" title="<?php _e('Lihat', 'makery'); ?>" class="element-button secondary square">
 			<span class="fa fa-eye"></span>
 		</a>
-		<a href="#product_form" title="<?php _e('Remove', 'makery'); ?>" class="element-button element-colorbox secondary square">
+		<a href="#product_form" title="<?php _e('Hapus', 'makery'); ?>" class="element-button element-colorbox secondary square">
 			<span class="fa fa-times"></span>
 		</a>
 		<?php } ?>
@@ -427,8 +433,8 @@ Template Name: Shop Product
 		<div id="product_form">
 			<div class="site-popup small">
 				<form class="site-form" method="POST" action="">
-					<p><?php _e('Are you sure you want to permanently remove this item?', 'makery'); ?></p>
-					<a href="#" class="element-button element-submit primary"><?php _e('Remove Item', 'makery'); ?></a>
+					<p><?php _e('Apakah kamu yakin ingin menghapus barang ini secara permanen?', 'makery'); ?></p>
+					<a href="#" class="element-button element-submit primary"><?php _e('Hapus Barang', 'makery'); ?></a>
 					<input type="hidden" name="product_id" value="<?php echo ThemexWoo::$data['product']['ID']; ?>" />
 					<input type="hidden" name="woo_action" value="remove_product" />
 				</form>
