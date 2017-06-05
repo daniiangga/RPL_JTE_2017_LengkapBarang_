@@ -28,10 +28,10 @@ global $product;
 		<?php if(!ThemexCore::checkOption('product_favorites')) { ?>
 		<?php if(is_user_logged_in()) { ?>
 			<?php if(in_array($product->id, ThemexUser::$data['current']['favorites'])) { ?>
-			<a href="#" title="<?php _e('Remove from Favorites', 'makery'); ?>" class="element-submit primary active" data-title="<?php _e('Add to Favorites', 'makery'); ?>"><span class="fa fa-heart small"></span></a>
+			<a href="#" title="<?php _e('Remove from Favorites', 'makery'); ?>" class="element-submit primary active" data-title="<?php _e('Add to Favorite', 'makery'); ?>"><span class="fa fa-heart small"></span></a>
 			<input type="hidden" name="user_action" class="toggle" value="remove_relation" data-value="add_relation" />
 			<?php } else { ?>
-			<a href="#" title="<?php _e('Add to Favorites', 'makery'); ?>" class="element-submit primary" data-title="<?php _e('Remove from Favorites', 'makery'); ?>"><span class="fa fa-heart small"></span></a>
+			<a href="#" title="<?php _e('Add to Favorites', 'makery'); ?>" class="element-submit primary" data-title="<?php _e('Remove from Favorite', 'makery'); ?>"><span class="fa fa-heart small"></span></a>
 			<input type="hidden" name="user_action" class="toggle" value="add_relation" data-value="remove_relation" />
 			<?php } ?>
 		<?php } else { ?>

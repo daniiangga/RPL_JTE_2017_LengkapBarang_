@@ -13,7 +13,7 @@ $order=wc_get_order($order_id);
 <table class="profile-fields">
 	<tbody>
 		<tr>
-			<th><?php _e('Number', 'makery'); ?></th>
+			<th><?php _e('Nomor', 'makery'); ?></th>
 			<td>
 				<?php echo $order->get_order_number(); ?>
 			</td>
