@@ -67,6 +67,7 @@
 					<input type="hidden" name="relation_id" value="<?php echo ThemexShop::$data['ID']; ?>" />					
 					<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_user" />
 				</form>
+				// merupakan kode kirim pertanyaan
 				<div class="site-popups hidden">
 					<?php if(!ThemexCore::checkOption('shop_questions')) { ?>
 					<div id="contact_form">
@@ -76,17 +77,19 @@
 									<input type="text" name="email" readonly="readonly" value="<?php echo ThemexUser::$data['current']['email']; ?>" />
 								</div>
 								<div class="field-wrap">
-									<textarea name="question" cols="30" rows="5" placeholder="<?php _e('Question', 'makery'); ?>"></textarea>
+									<textarea name="question" cols="45" rows="8" placeholder="<?php _e('Pertanyaan', 'makery'); ?>"></textarea>
 								</div>
-								<a href="#" class="element-button element-submit primary"><?php _e('Send Question', 'makery'); ?></a>				
+								<a href="#" class="element-button element-submit primary"><?php _e('Kirim Pertanyaan', 'makery'); ?></a>				
 								<input type="hidden" name="shop_id" value="<?php echo ThemexShop::$data['ID']; ?>" />
 								<input type="hidden" name="shop_action" value="submit_question" />
 								<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_shop" />
 							</form>
 						</div>
 					</div>
+					// merupakan kode kirim pertanyaan
 					<?php } ?>
 					<?php if(!ThemexCore::checkOption('shop_reports')) { ?>
+					// merupakan kode kirim laporan
 					<div id="report_form">
 						<div class="site-popup medium">
 							<form class="site-form element-form" method="POST" action="<?php echo AJAX_URL; ?>">
@@ -95,15 +98,16 @@
 									<input type="text" name="email" readonly="readonly" value="<?php echo esc_attr(ThemexUser::$data['current']['email']); ?>" />
 								</div>
 								<div class="field-wrap">
-									<textarea name="reason" cols="30" rows="5" placeholder="<?php _e('Reason', 'makery'); ?>"></textarea>
+									<textarea name="reason" cols="45" rows="8" placeholder="<?php _e('Alasan', 'makery'); ?>"></textarea>
 								</div>
-								<a href="#" class="element-button element-submit primary"><?php _e('Send Report', 'makery'); ?></a>
+								<a href="#" class="element-button element-submit primary"><?php _e('Kirim Laporan', 'makery'); ?></a>
 								<input type="hidden" name="shop_id" value="<?php echo ThemexShop::$data['ID']; ?>" />
 								<input type="hidden" name="shop_action" value="submit_report" />
 								<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_shop" />
 							</form>
 						</div>
 					</div>
+					// merupakan kode kirim laporan
 					<?php } ?>
 				</div>
 				<!-- /popups -->
@@ -111,11 +115,15 @@
 				<?php if(!ThemexCore::checkOption('shop_favorites')) { ?>
 				<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button active"><?php _e('Favorite', 'makery'); ?></a>
 				<?php } ?>
+				// ini merupakan kode untuk tanya pertanyaan
 				<?php if(!ThemexCore::checkOption('shop_questions')) { ?>
-				<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button square secondary" title="<?php _e('Ask a Question', 'makery'); ?>"><span class="fa fa-comment"></span></a>
+				<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button square secondary" title="<?php _e('Tanya pertanyaan', 'makery'); ?>"><span class="fa fa-comment"></span></a>
+				// ini merupakan kode untuk tanya pertanyaan
 				<?php } ?>
+				// ini merupakan kode untuk kirim laporan
 				<?php if(!ThemexCore::checkOption('shop_reports')) { ?>
-				<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button square secondary" title="<?php _e('Send a Report', 'makery'); ?>"><span class="fa fa-flag"></span></a>
+				<a href="<?php echo ThemexCore::getURL('register'); ?>" class="element-button square secondary" title="<?php _e('Kirim Laporan', 'makery'); ?>"><span class="fa fa-flag"></span></a>
+				// ini merupakan kode untuk kirim laporan
 				<?php } ?>
 				<?php } ?>				
 			</div>
