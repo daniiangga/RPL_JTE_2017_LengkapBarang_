@@ -1,0 +1,304 @@
+{
+  "general": {
+    "userAgentRegexes": [],
+    "replaceStrings": [],
+    "deviceRegKey": "3nxmqd46j0c607fu63u8cdmter",
+    "publicKey": "yempmp",
+    "appName": "Lengkap Barang",
+    "initialUrl": "http://cipiyoh.com/kel3/",
+    "forceScreenOrientation": "portrait",
+    "useCrosswalkWebView": false,
+    "enableWindowOpen": true,
+    "useWKWebView": true,
+    "userAgentAdd": "gonative",
+    "androidVersionName": "1.0.0",
+    "iosBundleId": "io.gonative.ios.yempmp",
+    "androidPackageName": "io.gonative.android.yempmp"
+  },
+  "navigation": {
+    "androidPullToRefresh": true,
+    "iosPullToRefresh": false,
+    "tabNavigation": {
+      "tabSelectionConfig": [
+        {
+          "id": "1",
+          "regex": ""
+        }
+      ],
+      "tabMenus": [
+        {
+          "id": "1",
+          "items": [
+            {
+              "subLinks": []
+            }
+          ]
+        }
+      ],
+      "active": false
+    },
+    "sidebarNavigation": {
+      "menuSelectionConfig": {
+        "redirectLocations": [
+          {
+            "regex": null,
+            "menuName": "default",
+            "loggedIn": false
+          },
+          {
+            "regex": ".*",
+            "menuName": "default",
+            "loggedIn": true
+          }
+        ],
+        "testURL": null
+      },
+      "menus": [
+        {
+          "name": "default",
+          "active": true,
+          "items": [
+            {
+              "label": "Halaman Utama",
+              "url": "http://cipiyoh.com/kel3/",
+              "icon": "fa-home",
+              "subLinks": []
+            },
+            {
+              "label": "Upload Barang",
+              "url": "http://cipiyoh.com/kel3/shop-products/",
+              "icon": "fa-download",
+              "subLinks": []
+            },
+            {
+              "label": "Toko",
+              "url": "http://cipiyoh.com/kel3/shops/",
+              "icon": "fa-building-o",
+              "subLinks": []
+            },
+            {
+              "label": "Barang",
+              "url": "http://cipiyoh.com/kel3/shop/",
+              "icon": "fa-shopping-cart",
+              "subLinks": []
+            },
+            {
+              "label": "Harga Barang",
+              "url": "http://cipiyoh.com/kel3/table/harga-pasar/",
+              "icon": "fa-usd",
+              "subLinks": []
+            },
+            {
+              "label": "Bantuan",
+              "url": "http://cipiyoh.com/kel3/bantuan/bantuan/",
+              "icon": "fa-book",
+              "subLinks": []
+            },
+            {
+              "label": "Hubungi Kami",
+              "url": "http://cipiyoh.com/kel3/hubungi-kami/hubungi-kami/",
+              "icon": "fa-user",
+              "subLinks": []
+            }
+          ]
+        },
+        {
+          "name": "loggedIn",
+          "active": false,
+          "items": [
+            {
+              "label": "Sample Home",
+              "url": "http://cipiyoh.com/kel3//home",
+              "subLinks": []
+            },
+            {
+              "label": "Sample About",
+              "url": "http://cipiyoh.com/kel3//about",
+              "subLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    "regexInternalExternal": {
+      "rules": [
+        {
+          "regex": "^(?!https?://).*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/login.php.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/dialog.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/v1\\.0/.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/oauth.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/v2\\.0/.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/checkpoint.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*plus\\.google\\.com/share.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*twitter\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*instagram\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://maps\\.google\\.com.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*linkedin\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*google\\.com/maps/search/.*",
+          "internal": false
+        },
+        {
+          "regex": ".*",
+          "internal": true
+        }
+      ]
+    },
+    "navigationTitles": {
+      "titles": [
+        {}
+      ]
+    },
+    "redirects": [],
+    "ignorePageFinishedRegexes": [],
+    "toolbarNavigation": null,
+    "navigationLevels": {
+      "levels": [
+        {}
+      ]
+    },
+    "deepLinkDomains": [],
+    "iosShowRefreshButton": false,
+    "androidShowRefreshButton": true
+  },
+  "styling": {
+    "transitionInteractiveDelayMax": 0.2,
+    "menuAnimationDuration": 0.15,
+    "iosLaunchImages": {},
+    "androidLaunchImages": {
+      "mdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1496664645441_d1t5axcgy9a50_180x180.9.png",
+      "hdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1496664645441_bqhpgnym3z4gm_270x270.9.png",
+      "xhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1496664645441_3g61cu76ynekw_360x360.9.png",
+      "xxhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1496664645442_qw71k9v60m0w4_540x540.9.png",
+      "xxxhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1496664645443_zk4274v7cyemp_720x720.9.png"
+    },
+    "androidShowSplash": true,
+    "disableAnimations": false,
+    "hideWebviewAlpha": 0.5,
+    "androidStatusBarBackgroundColor": "#909090",
+    "iosSidebarTextColor": "#333333",
+    "iosTintColor": "#0091fe",
+    "iosTitleColor": "#333333",
+    "androidTabBarIndicatorColor": "#000000",
+    "androidTabBarTextColor": "#000000",
+    "androidTabBarBackgroundColor": "#bdbdbd",
+    "androidSidebarSeparatorColor": "#585858",
+    "androidAccentColor": "#009688",
+    "androidPullToRefreshColor": "#777777",
+    "androidActionBarForegroundColor": "#000000",
+    "androidActionBarBackgroundColor": "#bdbdbd",
+    "androidSidebarForegroundColor": "#777777",
+    "androidSidebarBackgroundColor": "#FFFFFF",
+    "androidTheme": "light",
+    "iosTheme": "dark",
+    "navigationTitleImage": false,
+    "androidHideTitleInActionBar": false,
+    "iosSidebarFont": "Default",
+    "showNavigationBar": true,
+    "showActionBar": true,
+    "iosHeaderImage": "https://gonativeio.s3.amazonaws.com/uploads/j48jx2a4p9za8_1496720556895.png",
+    "icon": "https://gonativeio.s3.amazonaws.com/uploads/vcb7nrmqc6ehp_1496653376158.png"
+  },
+  "forms": {
+    "interceptForms": {
+      "forms": []
+    },
+    "search": {},
+    "loginConfig": {
+      "formInputs": [],
+      "loginIsFirstPage": false,
+      "formSelector": null
+    },
+    "signupConfig": {
+      "formInputs": [],
+      "formSelector": null,
+      "active": false
+    }
+  },
+  "permissions": {
+    "usesGeolocation": false
+  },
+  "publishing": {},
+  "performance": {
+    "webviewPools": [
+      {
+        "urls": [
+          {
+            "disown": "reload"
+          }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "push": {
+      "active": false
+    },
+    "analytics": {
+      "active": false
+    },
+    "registration": {
+      "endpoints": [
+        {
+          "dataType": [
+            "parse",
+            "oneSignal"
+          ],
+          "urlRegex": null,
+          "url": null
+        }
+      ],
+      "active": false
+    },
+    "oneSignal": {
+      "active": false
+    },
+    "facebook": {
+      "active": false
+    },
+    "parse": {
+      "pushEnabled": false,
+      "active": false
+    }
+  }
+}
